@@ -167,9 +167,9 @@
     .case-intro-grid { display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr); gap: clamp(30px, 5vw, 66px); align-items: start; padding-top: 2.1rem; }
     .case-statement { max-width: 45ch; color: var(--ink); font-size: clamp(1.18rem, 1.8vw, 1.45rem); font-weight: 560; line-height: 1.75; }
     .case-summary { max-width: 62ch; color: var(--muted); }
-    .project-video { overflow: hidden; margin: 2.8rem 0; border: 1px solid var(--rule); background: var(--surface); }
+    .project-video { width: min(100%, 360px); overflow: hidden; margin: 1.5rem 0 0 auto; border: 1px solid var(--rule); background: var(--surface); }
     .project-video video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #070b16; }
-    .project-video figcaption { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--rule); padding: .65rem .9rem; color: var(--muted); font-size: .82rem; }
+    .project-video figcaption { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--rule); padding: .55rem .75rem; color: var(--muted); font-size: .78rem; }
     .project-video figcaption strong { color: var(--ink); font-weight: 650; }
     .role-note { margin-top: 1.55rem; border-top: 1px solid var(--rule); padding-top: 1rem; color: var(--muted); font-size: .94rem; }
     .role-note strong { color: var(--ink); font-weight: 650; }
@@ -312,7 +312,7 @@
       .case-head h2 { font-size: 2rem; }
       .case-intro-grid { grid-template-columns: 1fr; gap: .2rem; padding-top: 1.5rem; }
       .case-statement { margin-bottom: .7rem; }
-      .project-video { margin: 2rem 0; }
+      .project-video { width: min(100%, 320px); margin-top: 1.25rem; }
       .project-video figcaption { flex-direction: column; gap: .1rem; }
       .workbench { margin-top: 2rem; }
       .queue-list { grid-template-columns: 1fr; }
@@ -379,7 +379,7 @@
         <article class="project-entry">
           <h2>SupplyPilot</h2>
           <p>AI 採購與供應鏈平台</p>
-          <p class="stack-line">Spring AI · RAG · pgvector · Java 21</p>
+          <p class="stack-line">Spring AI Semantic RAG · pgvector · Java 21</p>
           <div class="entry-links">
             <a class="text-link" href="http://54.175.145.174:8080/" target="_blank" rel="noopener noreferrer">
               開啟 SupplyPilot Demo
@@ -421,20 +421,12 @@
         </div>
 
         <div class="case-intro-grid">
-          <p class="case-statement">把採購、供應商、物料、庫存和文件查詢，整理成一個可追蹤的工作台。</p>
+          <p class="case-statement">以 Spring AI Semantic RAG 串接採購文件，讓 AI 回答有可追溯的資料脈絡。</p>
           <div>
-            <p class="case-summary">我依採購實務規劃採購單、供應商、物料、庫存與文件查詢功能，並定義採購交易一致性、角色授權及 AI 回答證據等業務規則。目標是讓工作人員能沿著實際流程處理採購與收貨，也能判斷 AI 回答依據。</p>
+            <p class="case-summary">我依採購實務規劃採購單、供應商、物料、庫存與文件查詢功能，並定義採購交易一致性、角色授權及 AI 回答證據等業務規則。專案正式使用 Spring AI Semantic RAG 與 PostgreSQL／pgvector 支援採購文件的語意查詢，讓使用者能檢視回答所依據的資料。</p>
             <p class="role-note"><strong>我的角色：</strong>需求規劃、業務規則、技術方向與驗收。主要程式實作與測試透過 Codex 協作。</p>
           </div>
         </div>
-
-        <figure class="project-video">
-          <video controls playsinline preload="metadata" aria-label="SupplyPilot 十秒專案介紹影片">
-            <source src="assets/supplypilot-intro-10s.mp4" type="video/mp4">
-            你的瀏覽器目前不支援 MP4 影片播放。
-          </video>
-          <figcaption><strong>SupplyPilot 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
-        </figure>
 
         <div class="workbench" aria-label="SupplyPilot Demo 工作總覽中的採購工作佇列">
           <div class="workbench-top">
@@ -466,37 +458,44 @@
         </div>
 
         <div class="case-walkthrough">
-          <h3>一個查詢問題，如何變成可驗收的工程條件</h3>
+          <h3>從採購文件查詢到 AI 回答依據</h3>
           <div class="stage-tabs" role="tablist" aria-label="SupplyPilot 案例階段">
             <button id="stage-tab-scene" class="stage-tab" type="button" role="tab" aria-selected="true" aria-controls="stage-panel-scene" tabindex="0" data-stage="0">情境</button>
-            <button id="stage-tab-rules" class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-rules" tabindex="-1" data-stage="1">規則</button>
-            <button id="stage-tab-acceptance" class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-acceptance" tabindex="-1" data-stage="2">驗收</button>
+            <button id="stage-tab-rules" class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-rules" tabindex="-1" data-stage="1">Semantic RAG</button>
+            <button id="stage-tab-acceptance" class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-acceptance" tabindex="-1" data-stage="2">延伸實驗</button>
           </div>
           <div class="stage-track" aria-hidden="true"><span class="stage-marker"></span></div>
           <div id="stage-panel-scene" class="stage-panel" role="tabpanel" aria-labelledby="stage-tab-scene" tabindex="0" aria-live="polite" aria-atomic="true">
-            <p class="stage-label">真實情境測試</p>
-            <h4>多條件採購單查詢，AI 回答出現落差</h4>
-            <p>我透過實際情境測試發現 AI 多條件採購單查詢問題，將使用者遇到的情況整理成後續技術驗證與驗收的起點。</p>
+            <p class="stage-label">採購文件查詢情境</p>
+            <h4>使用者需要找到相關文件，也要看懂回答依據</h4>
+            <p>我依採購流程整理文件查詢需求與回答證據規則，讓查詢結果能回到可檢視的資料脈絡。</p>
           </div>
           <div id="stage-panel-rules" class="stage-panel" role="tabpanel" aria-labelledby="stage-tab-rules" tabindex="0" hidden>
-            <p class="stage-label">我參與定義的規則</p>
-            <h4>查詢必須遵守唯讀範圍，回答也要保留資料依據</h4>
-            <p>我規劃 Agentic SQL 作為多條件查詢的實驗方向，並要求唯讀查詢、結果證據驗證，以及採購交易與角色授權規則。</p>
+            <p class="stage-label">專案正式使用的 AI 查詢流程</p>
+            <h4>Spring AI Semantic RAG 搭配 pgvector 檢索採購文件</h4>
+            <p>Semantic RAG 是 SupplyPilot 正式使用的 AI 文件查詢方式。我參與規劃文件檢索、回答依據與驗收條件，並以實際採購情境檢視結果是否符合使用需求。</p>
           </div>
           <div id="stage-panel-acceptance" class="stage-panel" role="tabpanel" aria-labelledby="stage-tab-acceptance" tabindex="0" hidden>
-            <p class="stage-label">目前驗證狀態</p>
-            <h4>實驗中，不把規劃中的功能寫成已完成</h4>
-            <p>Agentic SQL 仍在實驗驗證階段。驗收方向聚焦查詢範圍是否唯讀，以及結果是否能提供可檢查的證據。</p>
+            <p class="stage-label">延伸中的實驗方向</p>
+            <h4>Agentic SQL 用於探索多條件資料查詢</h4>
+            <p>Agentic SQL 仍在規劃與協作驗證階段，並非正式功能。驗收方向包含唯讀查詢範圍、角色授權與結果證據。</p>
           </div>
         </div>
 
         <div class="tech-block">
           <h3>專案技術</h3>
           <ul class="tech-list">
-            <li>Java 21</li><li>Spring Boot</li><li>Spring AI</li><li>MySQL</li><li>PostgreSQL / pgvector</li><li>React</li><li>TypeScript</li><li>Docker Compose</li>
+            <li>Java 21</li><li>Spring Boot</li><li>Spring AI Semantic RAG</li><li>MySQL</li><li>PostgreSQL / pgvector</li><li>React</li><li>TypeScript</li><li>Docker Compose</li>
           </ul>
         </div>
-        <p class="experiment-note"><strong>實驗狀態：</strong>Agentic SQL 是規劃與協作驗證中的實驗方向，並非已正式完成的功能。</p>
+        <p class="experiment-note"><strong>延伸實驗：</strong>Agentic SQL 仍在規劃與協作驗證中，尚未列為正式功能。</p>
+        <figure class="project-video">
+          <video controls playsinline preload="metadata" aria-label="SupplyPilot 十秒專案介紹影片">
+            <source src="assets/supplypilot-intro-10s.mp4" type="video/mp4">
+            你的瀏覽器目前不支援 MP4 影片播放。
+          </video>
+          <figcaption><strong>SupplyPilot 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
+        </figure>
       </section>
 
       <section id="parking" class="section" aria-labelledby="parking-title">
@@ -511,14 +510,6 @@
           </a>
         </div>
         <p class="parking-summary">目前以新莊區作為試點，以政府停車資料為基礎，規劃停車位查詢、地點與地圖互動、資料新鮮度，以及資料不足時不輸出不可靠預測的產品規則。</p>
-
-        <figure class="project-video">
-          <video controls playsinline preload="metadata" aria-label="Taiwan Parking Forecast 十秒專案介紹影片">
-            <source src="assets/taiwan-parking-intro-10s.mp4" type="video/mp4">
-            你的瀏覽器目前不支援 MP4 影片播放。
-          </video>
-          <figcaption><strong>Taiwan Parking Forecast 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
-        </figure>
 
         <div class="parking-points">
           <article class="parking-point">
@@ -538,6 +529,13 @@
             <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>Redis</li><li>Vue</li><li>Python 離線模型實驗</li><li>Docker Compose</li>
           </ul>
         </div>
+        <figure class="project-video">
+          <video controls playsinline preload="metadata" aria-label="Taiwan Parking Forecast 十秒專案介紹影片">
+            <source src="assets/taiwan-parking-intro-10s.mp4" type="video/mp4">
+            你的瀏覽器目前不支援 MP4 影片播放。
+          </video>
+          <figcaption><strong>Taiwan Parking Forecast 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
+        </figure>
       </section>
 
       <section id="experience" class="section" aria-labelledby="experience-title">
@@ -584,7 +582,7 @@
         <p class="section-intro">依照專案與實務範圍整理；工程技能持續練習，並以能獨立完成端到端實作為成長方向。</p>
         <dl class="skills-list">
           <dt>生成式 AI／RAG</dt>
-          <dd>RAG、pgvector、Spring AI 專案協作經驗；Agentic SQL 實驗規劃與驗收。</dd>
+          <dd>Spring AI Semantic RAG 與 pgvector 專案協作經驗；Agentic SQL 延伸實驗規劃與驗收。</dd>
           <dt>後端</dt>
           <dd>Java 21、Spring Boot、REST API；培訓與專案經驗，持續練習獨立實作。</dd>
           <dt>資料庫與搜尋</dt>
@@ -675,3 +673,4 @@
   </script>
 </body>
 </html>
+
