@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="劉佳瑋的軟體工程師作品集。從採購現場拆解需求、業務規則與驗收條件，探索生成式 AI 應用工程。">
-  <title>劉佳瑋 — 軟體工程師作品集</title>
+  <meta name="description" data-en-content="Jia-Wei Liu's software engineering portfolio, covering generative AI applications, business workflows, and testable requirements." content="劉佳瑋的軟體工程師作品集。從採購現場拆解需求、業務規則與驗收條件，探索生成式 AI 應用工程。">
+  <title data-en="Jia-Wei Liu — Software Engineering Portfolio">劉佳瑋 — 軟體工程師作品集</title>
   <style>
     :root {
       color-scheme: dark;
@@ -85,6 +85,21 @@
     .identity-roman { display: block; margin-top: .3rem; color: var(--muted); font-size: .82rem; letter-spacing: .035em; }
     .identity-role { max-width: 20ch; margin: 1.45rem 0 0; color: var(--blue); font-size: .94rem; font-weight: 650; line-height: 1.6; }
     .identity-note { max-width: 25ch; margin: .9rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+    html[lang="en"] .identity-roman { display: none; }
+    html[lang="en"] h1, html[lang="en"] .closing h2 { max-width: 27ch; }
+    .language-switch {
+      min-height: 44px;
+      margin-top: .6rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: .25rem .7rem;
+      background: transparent;
+      color: var(--blue);
+      font: inherit;
+      font-size: .82rem;
+      cursor: pointer;
+    }
+    .language-switch:hover { background: var(--surface); color: var(--ink); }
 
     .site-nav { display: grid; gap: .25rem; margin-top: 3.4rem; }
     .site-nav a {
@@ -300,6 +315,8 @@
         border-bottom: 1px solid var(--rule);
       }
       .identity { display: inline-flex; align-items: baseline; gap: .65rem; }
+      .rail-heading { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+      .language-switch { flex: none; margin-top: 0; }
       .identity-name { font-size: 1.2rem; }
       .identity-roman { margin: 0; font-size: .74rem; }
       .identity-role, .identity-note, .rail-foot { display: none; }
@@ -353,253 +370,305 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">跳至主要內容</a>
+  <a class="skip-link" href="#main-content" data-en="Skip to main content">跳至主要內容</a>
 
-  <aside class="site-rail" aria-label="個人導覽">
-    <a class="identity" href="#top" aria-label="回到劉佳瑋作品集首頁">
-      <span class="identity-name">劉佳瑋</span>
-      <span class="identity-roman">Jia-Wei Liu</span>
-    </a>
-    <p class="identity-role">生成式 AI 應用工程<br>求職中</p>
-    <p class="identity-note">從採購、工業工程與供應鏈現場，走向軟體產品與 AI 應用。</p>
+  <aside class="site-rail" aria-label="個人導覽" data-en-label="Portfolio sidebar">
+    <div class="rail-heading">
+      <a class="identity" href="#top" aria-label="回到劉佳瑋作品集首頁" data-en-label="Back to the top of Jia-Wei Liu's portfolio">
+        <span class="identity-name" data-en="Jia-Wei Liu">劉佳瑋</span>
+        <span class="identity-roman">Jia-Wei Liu</span>
+      </a>
+      <button class="language-switch" type="button" lang="en" hidden>English</button>
+    </div>
+    <p class="identity-role" data-en="Generative AI Application Engineering · Open to work">生成式 AI 應用工程｜求職中</p>
+    <p class="identity-note" data-en="Bringing procurement, industrial engineering, and supply chain experience to software and AI applications.">從採購、工業工程與供應鏈現場，走向軟體產品與 AI 應用。</p>
 
-    <nav class="site-nav" aria-label="頁面導覽">
-      <a href="#projects">專案作品</a>
-      <a href="#experience">工作經歷</a>
-      <a href="#toolkit">技能與學習</a>
+    <nav class="site-nav" aria-label="頁面導覽" data-en-label="Page navigation">
+      <a href="#projects" data-en="Projects">專案作品</a>
+      <a href="#experience" data-en="Experience">工作經歷</a>
+      <a href="#toolkit" data-en="Skills">技能與學習</a>
     </nav>
 
     <p class="rail-foot">
-      <span class="availability">目前求職中</span>
-      <span>領域理解 · 規則拆解 · 驗收協作</span>
+      <span class="availability" data-en="Open to work">目前求職中</span>
+      <span data-en="Domain knowledge · Business rules · Acceptance testing">領域理解 · 規則拆解 · 驗收協作</span>
     </p>
   </aside>
 
   <main id="main-content" class="page-main">
     <div class="content">
       <section id="top" class="opening" aria-labelledby="page-title">
-        <p class="open-state">生成式 AI 應用工程｜求職中</p>
-        <h1 id="page-title">我把採購現場的問題，拆成可驗收的系統規則。</h1>
-        <p class="opening-copy">我是劉佳瑋，具備工業工程與管理背景、汽車科訓練及汽車零件採購經驗。近期以真實工作情境規劃軟體專案，<strong>把需求、業務規則與驗收條件說清楚</strong>，並透過 Codex 協作進行系統實作與測試，目標投入生成式 AI 應用工程。</p>
+        <p class="open-state" data-en="Generative AI Application Engineering · Open to work">生成式 AI 應用工程｜求職中</p>
+        <h1 id="page-title" data-en="I turn procurement workflows into testable software requirements.">我把採購現場的問題，拆成可驗收的系統規則。</h1>
+        <p class="opening-copy"><span data-en="I'm Jia-Wei Liu. My background includes industrial engineering and management, automotive training, and automotive parts procurement. I plan software projects around real workflows, ">我是劉佳瑋，具備工業工程與管理背景、汽車科訓練及汽車零件採購經驗。近期以真實工作情境規劃軟體專案，</span><strong data-en="define requirements, business rules, and acceptance criteria,">把需求、業務規則與驗收條件說清楚</strong><span data-en=" and collaborate with Codex on implementation and testing as I pursue generative AI application engineering.">，並透過 Codex 協作進行系統實作與測試，目標投入生成式 AI 應用工程。</span></p>
       </section>
 
-      <section id="projects" class="project-index" aria-label="專案入口">
+      <section id="projects" class="project-index" aria-label="專案入口" data-en-label="Selected projects">
+        <article class="project-entry">
+          <div class="project-entry-copy">
+            <h2>Office Service Desk RAG</h2>
+            <p data-en="IT self-service and ticketing">企業 IT 自助排查與報修</p>
+            <p class="stack-line">Spring AI · Gemini · MCP · MySQL</p>
+            <p class="project-entry-summary" data-en="Help employees troubleshoot IT issues using knowledge base articles, then submit and track support tickets when they need help.">以知識文件輔助員工排查 IT 問題，並在需要協助時建立報修單、查詢處理進度。</p>
+            <div class="entry-links">
+              <a class="text-link" href="https://159.69.186.207:8443/" target="_blank" rel="noopener noreferrer" data-en="Open the Office Service Desk Demo">開啟 Office Service Desk Demo</a>
+              <a class="text-link" href="https://github.com/liujiawei-tw/office-service-desk-rag" target="_blank" rel="noopener noreferrer" data-en="View repository on GitHub">GitHub 專案原始碼</a>
+            </div>
+          </div>
+          <figure class="project-video project-entry-video">
+            <video controls playsinline preload="metadata" aria-label="Office Service Desk 專案展示影片" data-en-label="Office Service Desk project walkthrough video">
+              <source src="assets/office-service-desk-showcase-10s.mp4" type="video/mp4">
+              <span data-en="Your browser does not support MP4 playback.">你的瀏覽器目前不支援 MP4 影片播放。</span>
+            </video>
+            <figcaption><strong data-en="Office Service Desk RAG overview">Office Service Desk RAG 專案介紹</strong><span data-en="10 sec · Play">10 秒 · 點擊播放</span></figcaption>
+          </figure>
+        </article>
         <article class="project-entry">
           <div class="project-entry-copy">
             <h2>SupplyPilot</h2>
-            <p>AI 採購與供應鏈平台</p>
+            <p data-en="AI procurement and supply chain platform">AI 採購與供應鏈平台</p>
             <p class="stack-line">Spring AI Semantic RAG · pgvector · Java 21</p>
-            <p class="project-entry-summary">以語意檢索支援採購文件查詢，讓 AI 回答保留可檢視的資料依據。</p>
+            <p class="project-entry-summary" data-en="Semantic search retrieves procurement documents so users can inspect the sources behind AI answers.">以語意檢索支援採購文件查詢，讓 AI 回答保留可檢視的資料依據。</p>
             <div class="entry-links">
               <a class="text-link" href="http://159.69.186.207/" target="_blank" rel="noopener noreferrer">
-                開啟 SupplyPilot Demo
+                <span data-en="Open the SupplyPilot Demo">開啟 SupplyPilot Demo</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
               </a>
               <a class="text-link" href="https://github.com/liujiawei-tw/supplypilot" target="_blank" rel="noopener noreferrer">
-                GitHub 專案原始碼
+                <span data-en="View repository on GitHub">GitHub 專案原始碼</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
               </a>
             </div>
           </div>
           <figure class="project-video project-entry-video">
-            <video controls playsinline preload="metadata" aria-label="SupplyPilot 十秒專案介紹影片">
+            <video controls playsinline preload="metadata" aria-label="SupplyPilot 十秒專案介紹影片" data-en-label="SupplyPilot 10-second overview video">
               <source src="assets/supplypilot-intro-10s.mp4" type="video/mp4">
-              你的瀏覽器目前不支援 MP4 影片播放。
+              <span data-en="Your browser does not support MP4 playback.">你的瀏覽器目前不支援 MP4 影片播放。</span>
             </video>
-            <figcaption><strong>SupplyPilot 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
+            <figcaption><strong data-en="SupplyPilot overview">SupplyPilot 專案介紹</strong><span data-en="10 sec · Play">10 秒 · 點擊播放</span></figcaption>
           </figure>
         </article>
         <article class="project-entry">
           <div class="project-entry-copy">
             <h2>Taiwan Parking Forecast</h2>
-            <p>新莊區試點｜停車位查詢與抵達預測</p>
-            <p class="stack-line">Java · Spring Boot · Python 離線實驗</p>
-            <p class="project-entry-summary">以政府停車資料為基礎，規劃停車位查詢、資料新鮮度與資料不足時的產品規則。</p>
+            <p data-en="Xinzhuang pilot · Parking availability and forecasts for arrival time">新莊區試點｜停車位查詢與抵達預測</p>
+            <p class="stack-line" data-en="Java · Spring Boot · Offline Python experiments">Java · Spring Boot · Python 離線實驗</p>
+            <p class="project-entry-summary" data-en="Uses government parking data to define availability search, data freshness rules, and how to handle insufficient observations.">以政府停車資料為基礎，規劃停車位查詢、資料新鮮度與資料不足時的產品規則。</p>
             <div class="entry-links">
               <a class="text-link" href="http://178.105.128.106:8080/" target="_blank" rel="noopener noreferrer">
-                開啟停車 Demo
+                <span data-en="Open the Parking Demo">開啟停車 Demo</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
               </a>
               <a class="text-link" href="https://github.com/liujiawei-tw/taiwan-parking-forecast" target="_blank" rel="noopener noreferrer">
-                GitHub 專案原始碼
+                <span data-en="View repository on GitHub">GitHub 專案原始碼</span>
                 <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
               </a>
             </div>
           </div>
           <figure class="project-video project-entry-video">
-            <video controls playsinline preload="metadata" aria-label="Taiwan Parking Forecast 十秒專案介紹影片">
+            <video controls playsinline preload="metadata" aria-label="Taiwan Parking Forecast 十秒專案介紹影片" data-en-label="Taiwan Parking Forecast 10-second overview video">
               <source src="assets/taiwan-parking-intro-10s.mp4" type="video/mp4">
-              你的瀏覽器目前不支援 MP4 影片播放。
+              <span data-en="Your browser does not support MP4 playback.">你的瀏覽器目前不支援 MP4 影片播放。</span>
             </video>
-            <figcaption><strong>Taiwan Parking Forecast 專案介紹</strong><span>10 秒 · 點擊播放</span></figcaption>
+            <figcaption><strong data-en="Taiwan Parking Forecast overview">Taiwan Parking Forecast 專案介紹</strong><span data-en="10 sec · Play">10 秒 · 點擊播放</span></figcaption>
           </figure>
         </article>
+      </section>
+
+      <section id="office-service-desk" class="section" aria-labelledby="office-service-desk-title">
+        <div class="case-head">
+          <div>
+            <h2 id="office-service-desk-title">Office Service Desk RAG</h2>
+            <p class="case-subtitle" data-en="IT self-service and ticketing">企業 IT 自助排查與報修</p>
+          </div>
+          <a class="text-link" href="https://159.69.186.207:8443/" target="_blank" rel="noopener noreferrer" data-en="Open the Demo">前往操作 Demo</a>
+        </div>
+        <div class="case-intro-grid">
+          <p class="case-statement" data-en="One place to search the knowledge base, troubleshoot an issue, and file a support ticket.">把知識檢索、故障排查與報修流程整合在同一個入口。</p>
+          <p class="case-summary" data-en="The AI service uses Spring AI, Gemini, and ONNX embeddings to retrieve knowledge base articles and display sources alongside answers. A separate Spring Boot service handles tickets through REST and MCP, stores data in MySQL, and manages schema migrations with Flyway.">Spring AI 搭配 Gemini 與 ONNX 向量嵌入檢索知識文件，並在回答旁呈現來源。獨立 Spring Boot 工單服務透過 REST 與 MCP 提供工單操作，使用 MySQL 儲存資料，並以 Flyway 管理資料庫遷移。</p>
+        </div>
+        <div class="parking-points">
+          <article class="parking-point">
+            <h3 data-en="Knowledge retrieval and sources">知識檢索與回答依據</h3>
+            <p data-en="Employees get troubleshooting guidance for common issues such as VPN connectivity and office equipment. Responses include retrieved excerpts, similarity scores, and tool calls so results can be checked.">以 VPN、辦公設備等常見問題引導員工自助排查。回應記錄檢索片段、相似度與工具呼叫，方便核對回答依據。</p>
+          </article>
+          <article class="parking-point">
+            <h3 data-en="Ticket creation and tracking">報修單建立與追蹤</h3>
+            <p data-en="Employees can carry the issue description into a ticket after troubleshooting. In chat, the assistant checks required fields and shares the ticket ID once the tool confirms creation.">排查後可帶入問題描述建立報修單。透過對話建單時，系統先確認必要欄位，並在工具回報成功後提供工單編號。</p>
+          </article>
+        </div>
+        <div class="tech-block">
+          <h3 data-en="Technology">專案技術</h3>
+          <ul class="tech-list">
+            <li>Java 21</li><li>Spring Boot</li><li>Spring AI</li><li>Gemini</li><li>ONNX Runtime</li><li>MCP</li><li>MySQL</li><li>Flyway</li><li>React</li><li>Vite</li><li>Docker Compose</li>
+          </ul>
+        </div>
       </section>
 
       <section id="supplypilot" class="section" aria-labelledby="supplypilot-title">
         <div class="case-head">
           <div>
             <h2 id="supplypilot-title">SupplyPilot</h2>
-            <p class="case-subtitle">AI 採購與供應鏈平台</p>
+            <p class="case-subtitle" data-en="AI procurement and supply chain platform">AI 採購與供應鏈平台</p>
           </div>
           <a class="text-link" href="http://159.69.186.207/" target="_blank" rel="noopener noreferrer">
-            前往操作 Demo
+            <span data-en="Open the Demo">前往操作 Demo</span>
             <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
           </a>
         </div>
 
         <div class="case-intro-grid">
-          <p class="case-statement">以 Spring AI Semantic RAG 串接採購文件，讓 AI 回答有可追溯的資料脈絡。</p>
+          <p class="case-statement" data-en="Spring AI Semantic RAG connects procurement answers to their source documents.">以 Spring AI Semantic RAG 串接採購文件，讓 AI 回答有可追溯的資料脈絡。</p>
           <div>
-            <p class="case-summary">目前部署於 CX33 VPS，已由 AWS 遷移。依採購實務規劃採購單、供應商、物料、庫存與文件查詢功能，並定義採購交易一致性、角色授權及 AI 回答證據等業務規則。專案正式使用 Spring AI Semantic RAG 與 PostgreSQL／pgvector 支援採購文件的語意查詢，讓使用者能檢視回答所依據的資料。</p>
+            <p class="case-summary" data-en="The demo moved from AWS to a CX33 VPS. I planned workflows for purchase orders, suppliers, materials, inventory, and document search, and defined rules for transaction consistency, role-based access, and source traceability. The project uses Spring AI Semantic RAG and PostgreSQL with pgvector so users can inspect the sources behind answers.">目前部署於 CX33 VPS，已由 AWS 遷移。依採購實務規劃採購單、供應商、物料、庫存與文件查詢功能，並定義採購交易一致性、角色授權及 AI 回答證據等業務規則。專案正式使用 Spring AI Semantic RAG 與 PostgreSQL／pgvector 支援採購文件的語意查詢，讓使用者能檢視回答所依據的資料。</p>
           </div>
         </div>
 
-        <div class="workbench" aria-label="SupplyPilot Demo 工作總覽中的採購工作佇列">
+        <div class="workbench" aria-label="SupplyPilot Demo 工作總覽中的採購工作佇列" data-en-label="Procurement queues in the SupplyPilot demo">
           <div class="workbench-top">
-            <span class="workbench-name">SupplyPilot / 採購工作台</span>
-            <span>依目前角色整理工作</span>
+            <span class="workbench-name" data-en="SupplyPilot / Procurement workspace">SupplyPilot / 採購工作台</span>
+            <span data-en="Tasks organized by role">依目前角色整理工作</span>
           </div>
           <div class="workbench-body">
-            <h3>工作總覽</h3>
-            <p class="workbench-caption">實際 Demo 工作總覽出現的三個採購與收貨佇列</p>
+            <h3 data-en="Work overview">工作總覽</h3>
+            <p class="workbench-caption" data-en="Three purchasing and receiving queues in the demo">實際 Demo 工作總覽出現的三個採購與收貨佇列</p>
             <ol class="queue-list">
               <li>
-                <span class="queue-status">待處理</span>
-                <strong>待處理採購單</strong>
-                <small>檢視草稿與已核准採購單</small>
+                <span class="queue-status" data-en="Pending">待處理</span>
+                <strong data-en="Pending purchase orders">待處理採購單</strong>
+                <small data-en="Review draft and approved purchase orders">檢視草稿與已核准採購單</small>
               </li>
               <li>
-                <span class="queue-status">已核准</span>
-                <strong>已核准待下單</strong>
-                <small>接續下單與交期作業</small>
+                <span class="queue-status" data-en="Approved">已核准</span>
+                <strong data-en="Approved and ready to order">已核准待下單</strong>
+                <small data-en="Place orders and track delivery dates">接續下單與交期作業</small>
               </li>
               <li>
-                <span class="queue-status">待到貨</span>
-                <strong>待收貨採購單</strong>
-                <small>核對物料與數量後進入收貨</small>
+                <span class="queue-status" data-en="Awaiting delivery">待到貨</span>
+                <strong data-en="Orders awaiting receipt">待收貨採購單</strong>
+                <small data-en="Check items and quantities before receiving">核對物料與數量後進入收貨</small>
               </li>
             </ol>
-            <p class="workbench-foot">依你提供的 SupplyPilot 操作畫面整理；上方 Demo 可檢視實際介面。</p>
+            <p class="workbench-foot" data-en="Open the SupplyPilot demo above to see these queues in the application.">依你提供的 SupplyPilot 操作畫面整理；上方 Demo 可檢視實際介面。</p>
           </div>
         </div>
 
         <div class="case-walkthrough">
-          <h3>從採購文件查詢到 AI 回答依據</h3>
-          <div class="stage-tabs" role="tablist" aria-label="SupplyPilot 案例階段">
-            <button id="stage-tab-scene" class="stage-tab" type="button" role="tab" aria-selected="true" aria-controls="stage-panel-scene" tabindex="0" data-stage="0">情境</button>
+          <h3 data-en="From document search to sources for AI answers">從採購文件查詢到 AI 回答依據</h3>
+          <div class="stage-tabs" role="tablist" aria-label="SupplyPilot 案例階段" data-en-label="SupplyPilot case study tabs">
+            <button id="stage-tab-scene" class="stage-tab" type="button" role="tab" aria-selected="true" aria-controls="stage-panel-scene" tabindex="0" data-stage="0" data-en="Scenario">情境</button>
             <button id="stage-tab-rules" class="stage-tab" type="button" role="tab" aria-selected="false" aria-controls="stage-panel-rules" tabindex="-1" data-stage="1">Semantic RAG</button>
           </div>
           <div class="stage-track" aria-hidden="true"><span class="stage-marker"></span></div>
           <div id="stage-panel-scene" class="stage-panel" role="tabpanel" aria-labelledby="stage-tab-scene" tabindex="0" aria-live="polite" aria-atomic="true">
-            <p class="stage-label">採購文件查詢情境</p>
-            <h4>使用者需要找到相關文件，也要看懂回答依據</h4>
-            <p>我依採購流程整理文件查詢需求與回答證據規則，讓查詢結果能回到可檢視的資料脈絡。</p>
+            <p class="stage-label" data-en="Procurement document search">採購文件查詢情境</p>
+            <h4 data-en="Users need relevant documents and a way to verify answers">使用者需要找到相關文件，也要看懂回答依據</h4>
+            <p data-en="I used the procurement workflow to define search requirements and source traceability rules so users could verify answers against the underlying documents.">我依採購流程整理文件查詢需求與回答證據規則，讓查詢結果能回到可檢視的資料脈絡。</p>
           </div>
           <div id="stage-panel-rules" class="stage-panel" role="tabpanel" aria-labelledby="stage-tab-rules" tabindex="0" hidden>
-            <p class="stage-label">專案正式使用的 AI 查詢流程</p>
-            <h4>Spring AI Semantic RAG 搭配 pgvector 檢索採購文件</h4>
-            <p>Semantic RAG 是 SupplyPilot 正式使用的 AI 文件查詢方式。我參與規劃文件檢索、回答依據與驗收條件，並以實際採購情境檢視結果是否符合使用需求。</p>
+            <p class="stage-label" data-en="Document retrieval workflow">專案正式使用的 AI 查詢流程</p>
+            <h4 data-en="Spring AI Semantic RAG and pgvector retrieve procurement documents">Spring AI Semantic RAG 搭配 pgvector 檢索採購文件</h4>
+            <p data-en="SupplyPilot uses Semantic RAG for document search. I helped define retrieval, source attribution, and acceptance criteria, then reviewed results against real procurement scenarios.">Semantic RAG 是 SupplyPilot 正式使用的 AI 文件查詢方式。我參與規劃文件檢索、回答依據與驗收條件，並以實際採購情境檢視結果是否符合使用需求。</p>
           </div>
         </div>
 
         <div class="tech-block">
-          <h3>專案技術</h3>
+          <h3 data-en="Technology">專案技術</h3>
           <ul class="tech-list">
             <li>Java 21</li><li>Spring Boot</li><li>Spring AI Semantic RAG</li><li>MySQL</li><li>PostgreSQL / pgvector</li><li>React</li><li>TypeScript</li><li>Docker</li>
           </ul>
         </div>
-        <p class="experiment-note"><strong>延伸實驗：</strong>Agentic SQL 仍在規劃與協作驗證中，尚未列為正式功能。</p>
+        <p class="experiment-note"><strong data-en="Experiment: ">延伸實驗：</strong><span data-en="Agentic SQL is in planning and validation.">Agentic SQL 仍在規劃與協作驗證中，尚未列為正式功能。</span></p>
       </section>
 
       <section id="parking" class="section" aria-labelledby="parking-title">
         <div class="case-head">
           <div>
             <h2 id="parking-title">Taiwan Parking Forecast</h2>
-            <p class="case-subtitle">找車位 — 停車位查詢與抵達預測</p>
+            <p class="case-subtitle" data-en="Parking availability and forecasts for arrival time">找車位 — 停車位查詢與抵達預測</p>
           </div>
           <a class="text-link" href="http://178.105.128.106:8080/" target="_blank" rel="noopener noreferrer">
-            前往找車位 Demo
+            <span data-en="Open the Parking Demo">前往找車位 Demo</span>
             <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
           </a>
         </div>
-        <p class="parking-summary">目前以新莊區作為試點，以政府停車資料為基礎，規劃停車位查詢、地點與地圖互動、資料新鮮度，以及資料不足時不輸出不可靠預測的產品規則。</p>
+        <p class="parking-summary" data-en="The Xinzhuang pilot uses government parking data. I planned availability search, location and map interactions, data freshness indicators, and rules for withholding forecasts when observations are insufficient.">目前以新莊區作為試點，以政府停車資料為基礎，規劃停車位查詢、地點與地圖互動、資料新鮮度，以及資料不足時不輸出不可靠預測的產品規則。</p>
 
         <div class="parking-points">
           <article class="parking-point">
-            <h3>資料可信度</h3>
-            <p>診斷官方資料、目錄與來源對應問題，要求核對資料缺漏，並清楚區分官方即時觀測與模型估計。</p>
+            <h3 data-en="Data reliability">資料可信度</h3>
+            <p data-en="Investigate mismatches between official data, catalogs, and sources, check for missing records, and clearly label official live observations and model estimates.">診斷官方資料、目錄與來源對應問題，要求核對資料缺漏，並清楚區分官方即時觀測與模型估計。</p>
           </article>
           <article class="parking-point">
-            <h3>產品規則</h3>
-            <p>呈現資料新鮮度；來源或觀測不足時，不以推估數字假裝即時空位，也不輸出沒有足夠依據的預測。</p>
+            <h3 data-en="Product rules">產品規則</h3>
+            <p data-en="Show how recently the data was updated. Withhold forecasts with insufficient evidence and label estimated counts separately from live availability.">呈現資料新鮮度；來源或觀測不足時，不以推估數字假裝即時空位，也不輸出沒有足夠依據的預測。</p>
           </article>
         </div>
-        <p class="parking-model"><strong>離線模型實驗：</strong>以 31 天資料進行時間序列切分，比較 Logistic Regression 與基準模型；模型仍在實驗階段，未提供或宣稱預測成效。</p>
+        <p class="parking-model"><strong data-en="Offline model experiment: ">離線模型實驗：</strong><span data-en="I used a time-series split on 31 days of data to compare logistic regression with a baseline. The model remains experimental.">以 31 天資料進行時間序列切分，比較 Logistic Regression 與基準模型；模型仍在實驗階段，未提供或宣稱預測成效。</span></p>
         <div class="tech-block">
-          <h3>專案技術</h3>
+          <h3 data-en="Technology">專案技術</h3>
           <ul class="tech-list">
-            <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>Redis</li><li>Vue</li><li>Python 離線模型實驗</li><li>Docker</li>
+            <li>Java</li><li>Spring Boot</li><li>MySQL</li><li>Redis</li><li>Vue</li><li data-en="Offline Python modeling">Python 離線模型實驗</li><li>Docker</li>
           </ul>
         </div>
       </section>
 
       <section id="experience" class="section" aria-labelledby="experience-title">
-        <h2 id="experience-title" class="section-title">工作經歷</h2>
-        <p class="section-intro">多年採購與跨部門協作經驗，讓我能從使用者實際工作方式出發，辨認流程、資料與品質規則。</p>
+        <h2 id="experience-title" class="section-title" data-en="Experience">工作經歷</h2>
+        <p class="section-intro" data-en="Years of procurement and cross-functional work inform how I identify workflow, data, and quality rules from the way people actually work.">多年採購與跨部門協作經驗，讓我能從使用者實際工作方式出發，辨認流程、資料與品質規則。</p>
         <ol class="timeline">
           <li>
             <span class="time-range">2024/11 — 2025/07</span>
             <div>
-              <h3>嘉韡工業股份有限公司</h3>
-              <p class="job-title">專員</p>
-              <p>開發與評估國內外供應商，執行詢價、比價、議價、下單與交期追蹤；協調進貨檢驗、品質異常、客訴及跨部門供應需求。</p>
+              <h3 data-en="TRUCK BODY PARTS INDUSTRIAL CO., LTD.">嘉韡工業股份有限公司</h3>
+              <p class="job-title" data-en="Foreign Procurement Specialist">專員</p>
+              <p data-en="Sourced and evaluated domestic and overseas suppliers, requested and compared quotes, negotiated terms, placed orders, and tracked deliveries. Coordinated incoming inspections, quality issues, customer complaints, and supply needs across teams.">開發與評估國內外供應商，執行詢價、比價、議價、下單與交期追蹤；協調進貨檢驗、品質異常、客訴及跨部門供應需求。</p>
             </div>
           </li>
           <li>
             <span class="time-range">2018/06 — 2023/06</span>
             <div>
-              <h3>睿紀實業有限公司</h3>
-              <p class="job-title">專員</p>
-              <p>負責汽車零件採購、新產品開發、供應商尋找及出貨前檢查。運用汽車科背景協助客訴初步判斷，並與供應商及處理團隊協調；同時維護電商平台、官網與社群產品資訊，支援展會期間數位行銷。</p>
+              <h3 data-en="RICH PARTS INDUSTRIAL CO.">睿紀實業有限公司</h3>
+              <p class="job-title" data-en="Procurement and E-commerce Specialist">專員</p>
+              <p data-en="Sourced automotive parts and suppliers, supported new product development, and performed pre-shipment checks. Used automotive training to triage complaints and coordinate with suppliers and internal teams. Maintained product information across e-commerce listings, the website, and social channels, and supported trade show marketing.">負責汽車零件採購、新產品開發、供應商尋找及出貨前檢查。運用汽車科背景協助客訴初步判斷，並與供應商及處理團隊協調；同時維護電商平台、官網與社群產品資訊，支援展會期間數位行銷。</p>
             </div>
           </li>
         </ol>
         <div class="education">
-          <span class="time-range">學歷</span>
+          <span class="time-range" data-en="Education">學歷</span>
           <div>
-            <h3>國立臺北科技大學</h3>
-            <p>工業工程與管理系｜四技畢業</p>
+            <h3 data-en="National Taipei University of Technology">國立臺北科技大學</h3>
+            <p data-en="Bachelor's degree in Industrial Engineering and Management">工業工程與管理系｜四技畢業</p>
           </div>
         </div>
       </section>
 
       <section id="toolkit" class="section" aria-labelledby="toolkit-title">
-        <h2 id="toolkit-title" class="section-title">技能</h2>
-        <p class="section-intro">依照專案與實務範圍整理；工程技能持續練習，並以能獨立完成端到端實作為成長方向。</p>
+        <h2 id="toolkit-title" class="section-title" data-en="Skills">技能</h2>
+        <p class="section-intro" data-en="These skills reflect project work and practical experience. I continue to develop the engineering skills needed to deliver a system end to end.">依照專案與實務範圍整理；工程技能持續練習，並以能獨立完成端到端實作為成長方向。</p>
         <dl class="skills-list">
-          <dt>生成式 AI／RAG</dt>
-          <dd>Spring AI Semantic RAG 與 pgvector 專案協作經驗</dd>
-          <dt>後端</dt>
-          <dd>Java 21、Spring Boot</dd>
-          <dt>資料庫與搜尋</dt>
-          <dd>MySQL、PostgreSQL、Redis、MongoDB、Elasticsearch</dd>
-          <dt>雲端與部署</dt>
-          <dd>CX33 VPS、Docker Compose；曾使用 AWS 部署</dd>
-          <dt>機器學習</dt>
-          <dd>Python 離線模型實驗與評估流程經驗</dd>
-          <dt>版本管理</dt>
-          <dd>Git／GitHub 基礎協作流程</dd>
+          <dt data-en="Generative AI / RAG">生成式 AI／RAG</dt>
+          <dd data-en="Project collaboration with Spring AI semantic retrieval, pgvector, Gemini, and MCP">Spring AI 語意檢索、pgvector、Gemini 與 MCP 專案協作經驗</dd>
+          <dt data-en="Backend">後端</dt>
+          <dd data-en="Java 21, Spring Boot">Java 21、Spring Boot</dd>
+          <dt data-en="Databases and search">資料庫與搜尋</dt>
+          <dd data-en="MySQL, PostgreSQL, Redis, MongoDB, Elasticsearch">MySQL、PostgreSQL、Redis、MongoDB、Elasticsearch</dd>
+          <dt data-en="Cloud and deployment">雲端與部署</dt>
+          <dd data-en="CX33 VPS and Docker Compose, with prior AWS deployment experience">CX33 VPS、Docker Compose；曾使用 AWS 部署</dd>
+          <dt data-en="Machine learning">機器學習</dt>
+          <dd data-en="Offline modeling and evaluation workflows in Python">Python 離線模型實驗與評估流程經驗</dd>
+          <dt data-en="Version control">版本管理</dt>
+          <dd data-en="Basic Git and GitHub collaboration workflows">Git／GitHub 基礎協作流程</dd>
         </dl>
-        <p class="learning-note"><strong>下一步：</strong>持續強化 Java、SQL、Python 與 AI 系統的獨立實作能力，投入生成式 AI 應用工程。</p>
+        <p class="learning-note"><strong data-en="Next steps: ">下一步：</strong><span data-en="I am building my ability to implement systems with Java, SQL, and Python as I pursue generative AI application engineering.">持續強化 Java、SQL、Python 與 AI 系統的獨立實作能力，投入生成式 AI 應用工程。</span></p>
       </section>
 
       <section class="closing" aria-labelledby="closing-title">
-        <h2 id="closing-title">我從現場工作流程理解問題，也持續把問題帶進軟體專案驗證。</h2>
-        <p>如果想從實際操作或案例規則開始了解，可以直接開啟以下 Demo。</p>
+        <h2 id="closing-title" data-en="I start with real workflows and test what I learn in software projects.">我從現場工作流程理解問題，也持續把問題帶進軟體專案驗證。</h2>
+        <p data-en="Explore the demos to see the workflows in action.">可從以下 Demo 了解實際操作。</p>
         <div class="closing-links">
           <a class="text-link" href="mailto:x0976117735@gmail.com">
-            Email：x0976117735@gmail.com
+            <span data-en="Email x0976117735@gmail.com">Email：x0976117735@gmail.com</span>
             <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
           </a>
           <a class="text-link" href="http://159.69.186.207/" target="_blank" rel="noopener noreferrer">
@@ -607,21 +676,82 @@
             <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
           </a>
           <a class="text-link" href="http://178.105.128.106:8080/" target="_blank" rel="noopener noreferrer">
-            找車位 Demo
+            <span data-en="Parking Demo">找車位 Demo</span>
             <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 3l5 5-5 5"/></svg>
           </a>
         </div>
       </section>
 
       <footer>
-        <p>劉佳瑋 · Jia-Wei Liu</p>
-        <p>個人作品集｜單頁 HTML、CSS 與 JavaScript</p>
+        <p data-en="Jia-Wei Liu">劉佳瑋 · Jia-Wei Liu</p>
+        <p data-en="Personal portfolio · HTML, CSS, and JavaScript">個人作品集｜單頁 HTML、CSS 與 JavaScript</p>
       </footer>
     </div>
   </main>
 
   <script>
     (() => {
+      const languageSwitch = document.querySelector('.language-switch');
+      const description = document.querySelector('meta[name="description"]');
+      const translations = [
+        ...Array.from(document.querySelectorAll('[data-en]'), element => ({
+          chinese: element.textContent,
+          english: element.dataset.en,
+          update: text => { element.textContent = text; }
+        })),
+        ...Array.from(document.querySelectorAll('[data-en-label]'), element => ({
+          chinese: element.getAttribute('aria-label'),
+          english: element.dataset.enLabel,
+          update: text => element.setAttribute('aria-label', text)
+        })),
+        {
+          chinese: description.content,
+          english: description.dataset.enContent,
+          update: text => { description.content = text; }
+        }
+      ];
+
+      function setLanguage(language) {
+        const english = language === 'en';
+        document.documentElement.lang = language;
+        translations.forEach(translation => {
+          translation.update(english ? translation.english : translation.chinese);
+        });
+        languageSwitch.textContent = english ? '繁體中文' : 'English';
+        languageSwitch.lang = english ? 'zh-Hant' : 'en';
+      }
+
+      const languagePreferenceKey = 'portfolio-language';
+      const url = new URL(window.location.href);
+      const requestedLanguage = url.searchParams.get('lang');
+      let savedLanguage;
+      try {
+        savedLanguage = localStorage.getItem(languagePreferenceKey);
+      } catch {
+        // URL selection works when browser storage is unavailable.
+      }
+      const preferredLanguage = ['en', 'zh-Hant'].includes(requestedLanguage)
+        ? requestedLanguage
+        : savedLanguage;
+      setLanguage(preferredLanguage === 'en' ? 'en' : 'zh-Hant');
+      languageSwitch.hidden = false;
+      languageSwitch.addEventListener('click', () => {
+        const language = document.documentElement.lang === 'en' ? 'zh-Hant' : 'en';
+        setLanguage(language);
+        try {
+          localStorage.setItem(languagePreferenceKey, language);
+        } catch {
+          // The current page still switches languages.
+        }
+        url.searchParams.set('lang', language);
+        url.hash = window.location.hash;
+        try {
+          history.replaceState(history.state, '', url);
+        } catch {
+          // Some browsers restrict history changes for local files.
+        }
+      });
+
       const tabs = Array.from(document.querySelectorAll('.stage-tab'));
       const panels = Array.from(document.querySelectorAll('.stage-panel'));
       const marker = document.querySelector('.stage-marker');
